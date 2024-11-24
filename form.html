@@ -1,0 +1,211 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Começar Agora - Zoe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+  <style>
+    body {
+      font-family: "Nunito", sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-hover:hover {
+      background-color: #38b2ac; /* Cor mais escura para o hover */
+      transform: scale(1.05);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #e6fff5, #c6f6d5);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body class="bg-green-50 gradient-bg">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
+    <div class="text-3xl font-bold text-green-600">Zoe</div>
+    <nav class="hidden md:flex space-x-6">
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="index.html">Início</a>
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="about.html">Como funciona?</a>
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="#">Sobre Nós</a>
+    </nav>
+    <button class="bg-green-500 text-white px-6 py-2 rounded-full shadow-md button-hover transition-transform transform">
+      <i class="fas fa-arrow-right mr-2"></i> <a href="form.html"> Inscreva-se </a>
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2 p-6">
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Vamos começar sua jornada com a Zoe!</h1>
+        <p class="text-gray-600 mb-8">Preencha as informações abaixo para que possamos corrigir sua redação com todo carinho e atenção que você merece.</p>
+        <img alt="Imagem de uma pessoa escrevendo em um caderno, representando o processo de redação" class="rounded-lg shadow-lg" height="300" src="images/form.jpg" width="500"/>
+      </div>
+      <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-lg">
+        <form id="interactive-form" class="space-y-6">
+          <div class="fade-in question" data-question="1">
+            <label class="block text-gray-700 font-bold mb-2" for="name">Qual é o seu nome?</label>
+            <input class="w-full px-3 py-2 border rounded-lg" id="name" name="name" type="text" required/>
+            <div class="flex justify-end mt-4">
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="nextQuestion()">Próximo</button>
+            </div>
+          </div>
+          <div class="fade-in question hidden" data-question="2">
+            <label class="block text-gray-700 font-bold mb-2" for="email">Qual é o seu email?</label>
+            <input class="w-full px-3 py-2 border rounded-lg" id="email" name="email" type="email" required/>
+            <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-4 sm:space-y-0 sm:space-x-4">
+              <button class="bg-gray-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="prevQuestion()">Retornar</button>
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="nextQuestion()">Próximo</button>
+            </div>
+          </div>
+          <div class="fade-in question hidden" data-question="3">
+            <label class="block text-gray-700 font-bold mb-2" for="whatsapp">Qual é o seu número de Whatsapp?</label>
+            <input class="w-full px-3 py-2 border rounded-lg" id="whatsapp" name="whatsapp" type="text" required/>
+            <p class="text-gray-600 mt-2">Por favor, verifique se o número está correto. A entrega será feita por Whatsapp e, se o número não estiver correto, não será possível entregar a correção.</p>
+            <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-4 sm:space-y-0 sm:space-x-4">
+              <button class="bg-gray-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="prevQuestion()">Retornar</button>
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="nextQuestion()">Próximo</button>
+            </div>
+          </div>
+          <div class="fade-in question hidden" data-question="4">
+            <label class="block text-gray-700 font-bold mb-2" for="institution">Qual é a sua banca/instituição?</label>
+            <input class="w-full px-3 py-2 border rounded-lg" id="institution" name="institution" type="text" required/>
+            <p class="text-gray-600 mt-2">Exemplo: ENEM, FUVEST, UECE</p>
+            <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-4 sm:space-y-0 sm:space-x-4">
+              <button class="bg-gray-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="prevQuestion()">Retornar</button>
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="nextQuestion()">Próximo</button>
+            </div>
+          </div>
+          <div class="fade-in question hidden" data-question="5">
+            <label class="block text-gray-700 font-bold mb-2" for="theme">Qual é o tema da sua redação?</label>
+            <input class="w-full px-3 py-2 border rounded-lg" id="theme" name="theme" type="text" required/>
+            <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-4 sm:space-y-0 sm:space-x-4">
+              <button class="bg-gray-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="prevQuestion()">Retornar</button>
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="nextQuestion()">Próximo</button>
+            </div>
+          </div>
+          <div class="fade-in question hidden" data-question="6">
+            <label class="block text-gray-700 font-bold mb-2" for="essay">Envie sua redação (digitada ou faça upload do arquivo)</label>
+            <textarea class="w-full px-3 py-2 border rounded-lg" id="essay" name="essay" rows="4"></textarea>
+            <input class="w-full px-3 py-2 border rounded-lg mt-2" id="file" name="file" type="file" accept=".pdf, .jpg, .jpeg, .png"/>
+            <div class="flex flex-col sm:flex-row justify-between mt-4 space-y-4 sm:space-y-0 sm:space-x-4">
+              <button class="bg-gray-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="button" onclick="prevQuestion()">Retornar</button>
+              <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform" type="submit">Enviar Redação</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white p-6 shadow-inner mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <p class="text-gray-600">&copy; 2024 Zoe. Todos os direitos reservados.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeInElements = document.querySelectorAll(".fade-in");
+
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      fadeInElements.forEach((element) => observer.observe(element));
+    });
+
+    function nextQuestion() {
+      const currentQuestion = document.querySelector('.question:not(.hidden)');
+      const input = currentQuestion.querySelector('input, textarea');
+      if (input && !input.value.trim()) {
+        alert('Por favor, preencha este campo antes de continuar.');
+        return;
+      }
+      const nextQuestion = document.querySelector(`.question[data-question="${parseInt(currentQuestion.dataset.question) + 1}"]`);
+
+      if (nextQuestion) {
+        currentQuestion.classList.add('hidden');
+        nextQuestion.classList.remove('hidden');
+      }
+    }
+
+    function prevQuestion() {
+      const currentQuestion = document.querySelector('.question:not(.hidden)');
+      const prevQuestion = document.querySelector(`.question[data-question="${parseInt(currentQuestion.dataset.question) - 1}"]`);
+
+      if (prevQuestion) {
+        currentQuestion.classList.add('hidden');
+        prevQuestion.classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('interactive-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const essayText = document.getElementById('essay').value.trim();
+      const fileInput = document.getElementById('file').files.length;
+
+      if (!essayText && !fileInput) {
+        alert('Por favor, envie sua redação digitada ou faça upload de um arquivo.');
+        return;
+      }
+
+      alert('Sua redação foi enviada com sucesso! Em breve você receberá a correção pelo Whatsapp.');
+      // Aqui você pode adicionar a lógica para enviar os dados para o backend e salvar no banco de dados
+    });
+  </script>
+</body>
+</html>

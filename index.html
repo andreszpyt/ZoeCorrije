@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+  <style>
+    body {
+      font-family: "Nunito", sans-serif;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-hover:hover {
+      background-color: #38b2ac; /* Cor mais escura para o hover */
+      transform: scale(1.05);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #e6fff5, #c6f6d5);
+    }
+  </style>
+</head>
+<body class="bg-green-50 gradient-bg">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
+    <div class="text-3xl font-bold text-green-600">Zoe</div>
+    <nav class="hidden md:flex space-x-6">
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="index.html">Início</a>
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="about.html">Como funciona?</a>
+      <a class="text-gray-700 hover:text-green-600 transition-colors" href="#">Sobre Nós</a>
+    </nav>
+    <button class="bg-green-500 text-white px-6 py-2 rounded-full shadow-md button-hover transition-transform transform">
+      <i class="fas fa-arrow-right mr-2"></i> Inscreva-se
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="p-6">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="text-center md:text-left md:w-1/2 fade-in">
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+          <span class="text-green-600">Zoe</span> - A Plataforma de Correção que Transforma
+        </h1>
+        <p class="text-gray-600 mb-8">
+          Receba feedbacks detalhados e melhore suas redações de forma prática e eficiente.
+        </p>
+        <div class="flex space-x-4">
+          <button class="bg-green-500 text-white px-6 py-3 rounded-full shadow-md button-hover transition-transform transform">
+            <a href="form.html">Começar Agora</a>
+          </button>
+          <button class="bg-gray-200 text-gray-700 px-6 py-3 rounded-full hover:bg-gray-300 transition-transform transform">
+            Saiba Mais
+          </button>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center md:justify-end slide-in-right" style="margin-top: 15px;">
+        <img
+          src="images/zoe.jpeg"
+          alt="Ilustração de uma mulher sorrindo"
+          class="rounded-lg shadow-lg"
+          width="400"
+          height="400"
+        />
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <div class="bg-green-200 p-6 rounded-lg fade-in shadow-md hover-card transition-transform transform">
+        <i class="fas fa-pen-nib text-4xl text-green-600 mb-4"></i>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Correção Profissional</h2>
+        <p class="text-gray-600">
+          Tenha suas redações avaliadas com critérios detalhados e sugestões personalizadas.
+        </p>
+      </div>
+      <div class="bg-red-100 p-6 rounded-lg fade-in shadow-md hover-card transition-transform transform">
+        <i class="fas fa-brain text-4xl text-red-600 mb-4"></i>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Aprendizado Contínuo</h2>
+        <p class="text-gray-600">
+          Descubra pontos de melhoria para evoluir em cada redação escrita.
+        </p>
+      </div>
+      <div class="bg-blue-100 p-6 rounded-lg fade-in shadow-md hover-card transition-transform transform">
+        <i class="fas fa-trophy text-4xl text-blue-600 mb-4"></i>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Resultados Garantidos</h2>
+        <p class="text-gray-600">
+          Melhore suas notas e conquiste resultados acadêmicos excepcionais.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 p-6 shadow-inner">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-600">&copy; 2024 Zoe. Todos os direitos reservados.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeInElements = document.querySelectorAll(".fade-in");
+
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      fadeInElements.forEach((element) => observer.observe(element));
+    });
+  </script>
+</body>
+</html>
